@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
   NSURL *requestURL = [request externalUserAgentRequestURL];
 
   // iOS 12 and later, use ASWebAuthenticationSession
-  if (@available(iOS 12.0, *)) {
+  /*if (@available(iOS 12.0, *)) {
     // ASWebAuthenticationSession doesn't work with guided access (rdar://40809553)
     if (!UIAccessibilityIsGuidedAccessEnabled()) {
       __weak OIDExternalUserAgentIOS *weakSelf = self;
@@ -163,7 +163,7 @@ NS_ASSUME_NONNULL_BEGIN
       _authenticationVC = authenticationVC;
       openedUserAgent = [authenticationVC start];
     }
-  }
+  }*/
   // iOS 9 and 10, use SFSafariViewController
   if (@available(iOS 9.0, *)) {
     if (!openedUserAgent && _presentingViewController) {
